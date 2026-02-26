@@ -1,0 +1,132 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+
+    background-color: var(--bg-primary);
+    background-image: url('../bg1x.png');
+    color: var(--text-main);
+    font-size: 1.6rem;
+    min-height: 150vh;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --accent: #7c3aed;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+
+    --font-header: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    /* Inter funciona bem para tudo */
+    --font-code: 'JetBrains Mono', monospace;
+    /* Para detalhes técnicos */
+}
+
+a {
+    color: var(--text-main);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.logo {
+    
+    display: none;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    z-index: 1;
+}
+
+.menu-sup {
+
+    position:fixed;
+    right: 0rem;
+    bottom: 9.2rem;
+    border-radius: 1rem;
+    background: var(--bg-secondary);
+    justify-content: space-around;
+    list-style: none;
+    letter-spacing: 0.3rem;
+    
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.nav-list li {
+    letter-spacing: 0.3rem;
+    margin-left: 3.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin right: 1rem;
+
+}
+
+.menu_botom {
+    background-color: var(--accent);
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+
+}
+
+
+@media (min-width: 500px) {
+    body {
+        background: #9e9e9e;
+    }
+    .logo {
+        display: flex;
+    }
+    .menu_botom { 
+        display: none; 
+    }
+    .menu-sup {
+        display: flex; /* Faz os filhos ficarem lado a lado */
+        justify-content: space-between; /* Empurra logo pra um lado e lista pro outro */
+        align-items: center;
+        padding: 0 5%; /* Dá um respiro nas laterais */
+        background-color: var(--bg-secondary);
+        height: 8vh;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        bottom: auto;
+    }
+    .nav-list {
+        display: flex;
+        flex-direction: row; /* Itens em linha */
+        gap: 2rem; /* Espaçamento moderno entre os links */
+    }
+    .menu_botom {
+        display: none;
+    }
+}
