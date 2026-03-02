@@ -356,7 +356,7 @@ a:hover {
 
 
 
-@media (min-width: 500px) {
+@media (min-width: 680px) {
     body {
         background-image: url('../bg2x.png');
     }

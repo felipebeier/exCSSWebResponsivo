@@ -8,19 +8,19 @@
   </head>
   <body>
     <div class="menu_botom" id="menu-toggle">
-        <div class="hamburger"></div>
+      <div class="hamburger"></div>
     </div>
     <header>
-        <nav class="menu-sup">
-            <div class="logo"><a>Logo</a></div>
-            <ul class="nav-list" id="nav-list">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+      <nav class="menu-sup">
+        <div class="logo"><a>Logo</a></div>
+        <ul class="nav-list" id="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sobre">Sobre Nós</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
       <section class="home">
@@ -51,91 +51,122 @@
 
           <div class="about-image">
             <img
-              src="imagens/sobre-nos.jpg"
+              src="imagens/sobre-nos-p.jpg"
+              srcset="
+                imagens/sobre-nos-p.jpg 680w,
+                imagens/sobre-nos-m.jpg 1000w,
+                imagens/sobre-nos-g.jpg 1500w
+              "
+              sizes="(max-width: 600px) 100vw, 50vw"
               alt="Equipe da Agência Criativa Web colaborando em design responsivo"
             />
           </div>
         </div>
       </section>
       <section id="depoimentos" class="testimonials">
-    <div class="container">
-        <h2>O que nossos clientes dizem</h2>
-        <div class="testimonials-container">
+        <div class="container">
+          <h2>O que nossos clientes dizem</h2>
+          <div class="testimonials-container">
             <div class="testimonial-card">
-                <span class="quote-icon">&ldquo;</span>
-                <p>A Agência Criativa Web transformou nossa presença online. O novo site não é apenas bonito, mas converte visitantes em clientes reais todos os dias.</p>
-                <div class="client-info">
-                    <strong>Ricardo Silva</strong>
-                    <span>CEO - Tech Solutions</span>
-                </div>
+              <span class="quote-icon">&ldquo;</span>
+              <p>
+                A Agência Criativa Web transformou nossa presença online. O novo
+                site não é apenas bonito, mas converte visitantes em clientes
+                reais todos os dias.
+              </p>
+              <div class="client-info">
+                <strong>Ricardo Silva</strong>
+                <span>CEO - Tech Solutions</span>
+              </div>
             </div>
 
             <div class="testimonial-card">
-                <span class="quote-icon">&ldquo;</span>
-                <p>O profissionalismo e a atenção aos detalhes superaram nossas expectativas. O design responsivo funciona perfeitamente em qualquer dispositivo.</p>
-                <div class="client-info">
-                    <strong>Mariana Costa</strong>
-                    <span>Diretora de Marketing - Fashion Store</span>
-                </div>
+              <span class="quote-icon">&ldquo;</span>
+              <p>
+                O profissionalismo e a atenção aos detalhes superaram nossas
+                expectativas. O design responsivo funciona perfeitamente em
+                qualquer dispositivo.
+              </p>
+              <div class="client-info">
+                <strong>Mariana Costa</strong>
+                <span>Diretora de Marketing - Fashion Store</span>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-    <section id="contato" class="contact">
-    <div class="container">
-        <h2>Entre em Contato</h2>
-        <p class="contact-subtitle">Dúvidas ou projetos? Vamos conversar!</p>
-        
-        <div class="contact-wrapper">
-            <form class="contact-form">
+        <section id="contato" class="contact">
+          <div class="container">
+            <h2>Entre em Contato</h2>
+            <p class="contact-subtitle">
+              Dúvidas ou projetos? Vamos conversar!
+            </p>
+
+            <div class="contact-wrapper">
+              <form class="contact-form">
                 <div class="input-group">
-                    <label for="name">Nome</label>
-                    <input type="text" id="name" placeholder="Seu nome completo" required>
+                  <label for="name">Nome</label>
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Seu nome completo"
+                    required
+                  />
                 </div>
-                
+
                 <div class="input-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" placeholder="seu@email.com" required>
+                  <label for="email">E-mail</label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="seu@email.com"
+                    required
+                  />
                 </div>
-                
+
                 <div class="input-group">
-                    <label for="message">Mensagem</label>
-                    <textarea id="message" rows="5" placeholder="Como podemos ajudar?" required></textarea>
+                  <label for="message">Mensagem</label>
+                  <textarea
+                    id="message"
+                    rows="5"
+                    placeholder="Como podemos ajudar?"
+                    required
+                  ></textarea>
                 </div>
-                
+
                 <button type="submit" class="btn-main">Enviar Mensagem</button>
-            </form>
-        </div>
-    </div>
-</section>
-</section>
+              </form>
+            </div>
+          </div>
+        </section>
+      </section>
       <section id="servicos" class="services">
-    <div class="container">
-        <h2>Nossos Serviços</h2>
-        <div class="services-grid">
+        <div class="container">
+          <h2>Nossos Serviços</h2>
+          <div class="services-grid">
             <div class="service-card">
-                <h3>Design Gráfico</h3>
-                <p>Identidades visuais que contam histórias.</p>
+              <h3>Design Gráfico</h3>
+              <p>Identidades visuais que contam histórias.</p>
             </div>
             <div class="service-card">
-                <h3>Web Design</h3>
-                <p>Sites responsivos e focados na experiência do usuário.</p>
+              <h3>Web Design</h3>
+              <p>Sites responsivos e focados na experiência do usuário.</p>
             </div>
             <div class="service-card">
-                <h3>SEO</h3>
-                <p>Colocamos sua marca no topo das buscas.</p>
+              <h3>SEO</h3>
+              <p>Colocamos sua marca no topo das buscas.</p>
             </div>
+          </div>
         </div>
-    </div>
-</section>
+      </section>
     </main>
   </body>
   <script>
-    const btn = document.getElementById('menu-toggle');
-    const menu = document.querySelector('.menu-sup');
+    const btn = document.getElementById("menu-toggle");
+    const menu = document.querySelector(".menu-sup");
 
-    btn.addEventListener('click', () => {
-        btn.classList.toggle('active'); // Transforma em X
-        menu.classList.toggle('active'); // Mostra/Esconde o menu
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active"); // Transforma em X
+      menu.classList.toggle("active"); // Mostra/Esconde o menu
     });
-</script>
+  </script>
 </html>
