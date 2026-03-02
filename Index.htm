@@ -1,28 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <header>
-        
-        <nav class="menu-sup">
-            <div class="logo"><a>Logo</a></div>
-            <ul class="nav-list"> 
-                <li><a href="/">Home</a></li>
-                <li><a href="/">Sobre Nós</a></li>
-                <li><a href="/">Serviços</a></li>
-                <li><a href="/">Depoimentos</a></li>
-                <li><a href="/">Contato</a></li>
-           </ul>
-           <div class="menu_botom">
-                <span>+</span>
-            </div>
-        </nav>
+      <nav class="menu-sup">
+        <div class="logo"><a>Logo</a></div>
+        <ul class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Sobre Nós</a></li>
+          <li><a href="/">Serviços</a></li>
+          <li><a href="/">Depoimentos</a></li>
+          <li><a href="/">Contato</a></li>
+        </ul>
+        <div class="menu_botom">
+          <span>+</span>
+        </div>
+      </nav>
     </header>
-    
-</body>
+    <main>
+      <section class="home">
+        <div class="home-content">
+          <h1>Agência Criativa Web</h1>
+          <p>Transformando ideias em experiências digitais incríveis.</p>
+          <a href="#contato" class="btn-main">Fale Conosco</a>
+        </div>
+      </section>
+
+      <section id="sobre" class="about">
+        <div class="about-container">
+          <div class="about-text">
+            <h2>Sobre a Agência</h2>
+            <h3>Criatividade que impulsiona o seu negócio digital.</h3>
+            <p>
+              Na <strong>Agência Criativa Web</strong>, não apenas criamos
+              sites; construímos pontes entre marcas e seus clientes. Nascemos
+              da paixão por design funcional e tecnologia de ponta, focando
+              sempre em resultados mensuráveis.
+            </p>
+            <p>
+              Nossos valores são pautados na transparência, inovação constante e
+              no compromisso com a experiência do usuário. Cada projeto é único,
+              tratado com a exclusividade que a sua ideia merece.
+            </p>
+          </div>
+
+          <div class="about-image">
+            <img
+              src="imagens/sobre-nos.jpg"
+              alt="Equipe da Agência Criativa Web colaborando em design responsivo"
+            />
+          </div>
+        </div>
+      </section>
+      <section id="depoimentos" class="testimonials">
+    <div class="container">
+        <h2>O que nossos clientes dizem</h2>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <span class="quote-icon">&ldquo;</span>
+                <p>A Agência Criativa Web transformou nossa presença online. O novo site não é apenas bonito, mas converte visitantes em clientes reais todos os dias.</p>
+                <div class="client-info">
+                    <strong>Ricardo Silva</strong>
+                    <span>CEO - Tech Solutions</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <span class="quote-icon">&ldquo;</span>
+                <p>O profissionalismo e a atenção aos detalhes superaram nossas expectativas. O design responsivo funciona perfeitamente em qualquer dispositivo.</p>
+                <div class="client-info">
+                    <strong>Mariana Costa</strong>
+                    <span>Diretora de Marketing - Fashion Store</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="contato" class="contact">
+    <div class="container">
+        <h2>Entre em Contato</h2>
+        <p class="contact-subtitle">Dúvidas ou projetos? Vamos conversar!</p>
+        
+        <div class="contact-wrapper">
+            <form class="contact-form">
+                <div class="input-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" placeholder="Seu nome completo" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="seu@email.com" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="message">Mensagem</label>
+                    <textarea id="message" rows="5" placeholder="Como podemos ajudar?" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-main">Enviar Mensagem</button>
+            </form>
+        </div>
+    </div>
+</section>
+</section>
+      <section id="servicos" class="services">
+    <div class="container">
+        <h2>Nossos Serviços</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Design Gráfico</h3>
+                <p>Identidades visuais que contam histórias.</p>
+            </div>
+            <div class="service-card">
+                <h3>Web Design</h3>
+                <p>Sites responsivos e focados na experiência do usuário.</p>
+            </div>
+            <div class="service-card">
+                <h3>SEO</h3>
+                <p>Colocamos sua marca no topo das buscas.</p>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+  </body>
 </html>

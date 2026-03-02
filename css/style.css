@@ -1,16 +1,3 @@
-html {
-    font-size: 62.5%;
-}
-
-body {
-
-    background-color: var(--bg-primary);
-    background-image: url('../bg1x.png');
-    color: var(--text-main);
-    font-size: 1.6rem;
-    min-height: 150vh;
-}
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -21,7 +8,8 @@ body {
 :root {
     --bg-primary: #0f172a;
     --bg-secondary: #1e293b;
-    --accent: #7c3aed;
+    --accent2: #7c3aed;
+    --accent: #35568C;
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
 
@@ -31,6 +19,24 @@ body {
     --font-code: 'JetBrains Mono', monospace;
     /* Para detalhes técnicos */
 }
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+
+    background-color: var(--bg-primary);
+    background-image: url('../bg1x.png');
+    color: var(--text-main);
+    background-size: cover;      /* Faz a imagem cobrir a tela toda */
+    background-position: center;  /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Não deixa a imagem repetir */
+    font-size: 1.6rem;
+    min-height: 100vh;
+}
+
+
 
 a {
     color: var(--text-main);
@@ -61,6 +67,7 @@ a:hover {
     justify-content: space-around;
     list-style: none;
     letter-spacing: 0.3rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     
 }
 
@@ -76,7 +83,7 @@ a:hover {
     margin-left: 3.2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    margin right: 1rem;
+    margin-right: 1rem;
 
 }
 
@@ -94,13 +101,211 @@ a:hover {
     justify-content: center;
     cursor: pointer;
     border: none;
+    box-shadow: 0 4px 13px rgba(1, 3, 0, 1);
 
 }
+
+.home {
+    height: 100vh; 
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    text-align: center;
+    padding: 2rem;
+}
+
+.home-content h1 {
+    font-size: 4rem; /* Tamanho grande para destaque */
+    margin-bottom: 2rem;
+    color: var(--accent);
+}
+
+.home-content p {
+    font-size: 1.8rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+}
+
+.btn-main {
+    display: inline-block;
+    background-color: var(--accent); /* Agora usando seu novo azul #35568C */
+    color: var(--text-main);
+    padding: 1.5rem 3.5rem;
+    border-radius: 5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+    /* Adicione uma borda leve para destacar o azul no fundo escuro */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-main:hover {
+    /* No hover, podemos deixar o azul um pouco mais claro para dar brilho */
+    background-color: #4a73b5; 
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(53, 86, 140, 0.4);
+    opacity: 1;
+}
+
+/* Efeito ao clicar */
+.btn-main:active {
+    transform: translateY(-1px);
+}
+
+.about-container{
+    display: flex;
+    flex-direction: column;
+    padding: 8rem 2rem;
+    line-height: 1.6;
+    gap: 4rem; /* Cria um espaço entre os dois */
+}
+
+
+.about-image img {
+    width: 100%; /* Garante que a imagem não ultrapasse o limite dos 40% */
+    height: auto;
+    border-radius: 1rem;
+}
+
+.services {
+    padding: 8rem 2rem;
+    background-color: var(--bg-secondary); /* Para dar contraste com o fundo principal */
+}
+
+.services-grid {
+    display: grid;
+    /* A linha mágica aqui: */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem; /* Espaçamento entre os cards */
+    margin-top: 4rem;
+}
+
+.service-card {
+    background-color: var(--bg-primary);
+    padding: 3rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+}
+
+.testimonials {
+    padding: 8rem 2rem;
+}
+
+.testimonials-container {
+    display: flex;
+    flex-wrap: wrap; /* Para quebrar linha no mobile */
+    gap: 3rem;
+    justify-content: center;
+}
+
+.testimonial-card {
+    background-color: var(--bg-secondary);
+    padding: 4rem;
+    border-radius: 1.5rem;
+    position: relative; /* Necessário para posicionar as aspas se quiser */
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.quote-icon {
+    font-family: serif;
+    font-size: 8rem;
+    color: var(--accent);
+    opacity: 0.3;
+    line-height: 1;
+    display: block;
+    margin-bottom: -2rem; /* Puxa o texto para cima das aspas */
+}
+
+.client-info {
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+}
+
+.client-info strong {
+    display: block;
+    color: var(--text-main);
+}
+
+.client-info span {
+    color: var(--text-muted);
+    font-size: 1.4rem;
+}
+
+
+.contact {
+    padding: 8rem 2rem;
+}
+
+.contact-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 4rem;
+    font-size: 1.8rem;
+}
+
+.contact-wrapper {
+    max-width: 600px;
+    margin: 0 auto; /* Centraliza o formulário na tela */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.input-group label {
+    font-size: 1.4rem;
+    color: var(--text-main);
+    font-weight: bold;
+}
+
+.input-group input, 
+.input-group textarea {
+    background-color: var(--bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+    color: var(--text-main);
+    font-size: 1.6rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    border-color: var(--accent); /* Dá o brilho azul quando o usuário clica */
+}
+
+/* Ajuste para o botão no formulário */
+.contact-form .btn-main {
+    width: 100%; /* No mobile, o botão ocupa tudo para facilitar o clique */
+    cursor: pointer;
+}
+
 
 
 @media (min-width: 500px) {
     body {
-        background: #9e9e9e;
+        background-image: url('../bg2x.png');
     }
     .logo {
         display: flex;
@@ -128,5 +333,30 @@ a:hover {
     }
     .menu_botom {
         display: none;
+    }
+
+    .home {
+        padding-top: 8vh;
+    }
+
+    .about-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* Centraliza verticalmente o texto com a imagem */
+        gap: 4rem; /* Cria um espaço entre os dois */
+    }
+
+    .about-text {
+        flex-basis: 50%; /* O texto começa tentando ocupar 60% */
+    }
+
+    .about-image {
+        flex-basis: 50%; /* A imagem começa tentando ocupar 40% */
+    }
+    
+    .about-image img {
+        width: 100%; /* Garante que a imagem não ultrapasse o limite dos 40% */
+        height: auto;
+        border-radius: 1rem;
     }
 }
