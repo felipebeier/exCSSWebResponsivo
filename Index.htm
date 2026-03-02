@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <div class="menu_botom" id="menu-toggle">
+        <div class="hamburger"></div>
+    </div>
     <header>
-      <nav class="menu-sup">
-        <div class="logo"><a>Logo</a></div>
-        <ul class="nav-list">
-          <li><a href="/">Home</a></li>
-          <li><a href="/">Sobre Nós</a></li>
-          <li><a href="/">Serviços</a></li>
-          <li><a href="/">Depoimentos</a></li>
-          <li><a href="/">Contato</a></li>
-        </ul>
-        <div class="menu_botom">
-          <span>+</span>
-        </div>
-      </nav>
+        <nav class="menu-sup">
+            <div class="logo"><a>Logo</a></div>
+            <ul class="nav-list" id="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
       <section class="home">
@@ -129,4 +129,13 @@
 </section>
     </main>
   </body>
+  <script>
+    const btn = document.getElementById('menu-toggle');
+    const menu = document.querySelector('.menu-sup');
+
+    btn.addEventListener('click', () => {
+        btn.classList.toggle('active'); // Transforma em X
+        menu.classList.toggle('active'); // Mostra/Esconde o menu
+    });
+</script>
 </html>

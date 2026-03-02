@@ -21,6 +21,7 @@
 }
 
 html {
+    scroll-behavior: smooth;
     font-size: 62.5%;
 }
 
@@ -92,7 +93,6 @@ a:hover {
     width: 6rem;
     height: 6rem;
     border-radius: 50%;
-
     position: fixed;
     bottom: 3rem;
     right: 3rem;
@@ -100,10 +100,63 @@ a:hover {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    border: none;
-    box-shadow: 0 4px 13px rgba(1, 3, 0, 1);
-
+    z-index: 2000;
+    box-shadow: 0 4px 13px rgba(0, 0, 0, 0.5);
 }
+
+/* O "Hambúrguer" feito com CSS puro */
+.hamburger {
+    width: 25px;
+    height: 3px;
+    background: var(--text-main);
+    position: relative;
+    transition: 0.3s;
+}
+
+.hamburger::before, .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: var(--text-main);
+    transition: 0.3s;
+}
+
+.hamburger::before { top: -8px; }
+.hamburger::after { bottom: -8px; }
+
+/* Estado de "X" quando o menu está aberto */
+.menu_botom.active .hamburger { background: transparent; }
+.menu_botom.active .hamburger::before { transform: rotate(45deg); top: 0; }
+.menu_botom.active .hamburger::after { transform: rotate(-45deg); bottom: 0; }
+
+/* Esconder o menu por padrão no Mobile */
+/* Esconder o menu por padrão no Mobile */
+@media (max-width: 679px) {
+    /* O menu começa escondido */
+    .menu-sup {
+        display: none; 
+        position: fixed;
+        bottom: 9.2rem; /* Mantém a posição acima do botão */
+        right: 3rem;
+        width: 200px; /* Largura fixa para o menu mobile */
+        height: auto;
+        padding: 2rem;
+        flex-direction: column;
+        z-index: 1500;
+    }
+
+    /* Quando clicamos no botão, o JS adiciona a classe 'active' */
+    .menu-sup.active {
+        display: flex;
+    }
+
+    /* O botão SEMPRE fica visível */
+    .menu_botom {
+        display: flex; 
+    }
+}
+
 
 .home {
     height: 100vh; 
