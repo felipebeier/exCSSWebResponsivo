@@ -3,8 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Agência Criativa Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/estilos.css" />
   </head>
   <body>
     <div class="menu_botom" id="menu-toggle">
@@ -53,9 +66,9 @@
             <img
               src="imagens/sobre-nos-p.jpg"
               srcset="
-                imagens/sobre-nos-p.jpg 680w,
+                imagens/sobre-nos-p.jpg  680w,
                 imagens/sobre-nos-m.jpg 1000w,
-                imagens/sobre-nos-g.jpg 1500w
+                imagens/sobre-nos.jpg   1500w
               "
               sizes="(max-width: 600px) 100vw, 50vw"
               alt="Equipe da Agência Criativa Web colaborando em design responsivo"
@@ -94,50 +107,6 @@
             </div>
           </div>
         </div>
-        <section id="contato" class="contact">
-          <div class="container">
-            <h2>Entre em Contato</h2>
-            <p class="contact-subtitle">
-              Dúvidas ou projetos? Vamos conversar!
-            </p>
-
-            <div class="contact-wrapper">
-              <form class="contact-form">
-                <div class="input-group">
-                  <label for="name">Nome</label>
-                  <input
-                    type="text"
-                    id="name"
-                    placeholder="Seu nome completo"
-                    required
-                  />
-                </div>
-
-                <div class="input-group">
-                  <label for="email">E-mail</label>
-                  <input
-                    type="email"
-                    id="email"
-                    placeholder="seu@email.com"
-                    required
-                  />
-                </div>
-
-                <div class="input-group">
-                  <label for="message">Mensagem</label>
-                  <textarea
-                    id="message"
-                    rows="5"
-                    placeholder="Como podemos ajudar?"
-                    required
-                  ></textarea>
-                </div>
-
-                <button type="submit" class="btn-main">Enviar Mensagem</button>
-              </form>
-            </div>
-          </div>
-        </section>
       </section>
       <section id="servicos" class="services">
         <div class="container">
@@ -158,15 +127,86 @@
           </div>
         </div>
       </section>
-    </main>
-  </body>
-  <script>
-    const btn = document.getElementById("menu-toggle");
-    const menu = document.querySelector(".menu-sup");
+      <section id="contato" class="contact">
+        <div class="container">
+          <h2>Entre em Contato</h2>
+          <p class="contact-subtitle">Dúvidas ou projetos? Vamos conversar!</p>
 
-    btn.addEventListener("click", () => {
-      btn.classList.toggle("active"); // Transforma em X
-      menu.classList.toggle("active"); // Mostra/Esconde o menu
-    });
-  </script>
+          <div class="contact-wrapper">
+            <form class="contact-form">
+              <div class="input-group">
+                <label for="name">Nome</label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Seu nome completo"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label for="email">E-mail</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="seu@email.com"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label for="message">Mensagem</label>
+                <textarea
+                  id="message"
+                  rows="5"
+                  placeholder="Como podemos ajudar?"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn-main">Enviar Mensagem</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <div class="container footer-content">
+        <div class="footer-brand">
+          <div class="logo-footer">Logo</div>
+          <p>Transformando ideias em experiências digitais incríveis.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Links Rápidos</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social">
+          <h4>Redes Sociais</h4>
+          <div class="social-icons">
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+            <a href="#">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Agência Criativa Web. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+    <script>
+      const btn = document.getElementById("menu-toggle");
+      const menu = document.querySelector(".menu-sup");
+
+      btn.addEventListener("click", () => {
+        btn.classList.toggle("active"); // Transforma em X
+        menu.classList.toggle("active"); // Mostra/Esconde o menu
+      });
+    </script>
+  </body>
 </html>
