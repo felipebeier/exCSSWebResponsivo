@@ -49,7 +49,7 @@ a:hover {
     opacity: 0.7;
 }
 
-.logo {
+.navbar__logo {
     
     display: none;
     font-size: 2.4rem;
@@ -58,7 +58,7 @@ a:hover {
     z-index: 1;
 }
 
-.menu-sup {
+.navbar {
 
     position:fixed;
     right: 0rem;
@@ -72,14 +72,14 @@ a:hover {
     
 }
 
-.nav-list {
+.navbar__link {
     list-style: none;
     display: flex;
     flex-direction: column;
 
 }
 
-.nav-list li {
+.navbar__link li {
     letter-spacing: 0.3rem;
     margin-left: 3.2rem;
     margin-top: 1rem;
@@ -88,7 +88,7 @@ a:hover {
 
 }
 
-.menu_botom {
+.menu-botom {
     background-color: var(--accent);
     width: 6rem;
     height: 6rem;
@@ -126,15 +126,15 @@ a:hover {
 .hamburger::after { bottom: -8px; }
 
 /* Estado de "X" quando o menu está aberto */
-.menu_botom.active .hamburger { background: transparent; }
-.menu_botom.active .hamburger::before { transform: rotate(45deg); top: 0; }
-.menu_botom.active .hamburger::after { transform: rotate(-45deg); bottom: 0; }
+.menu-botom.active .hamburger { background: transparent; }
+.menu-botom.active .hamburger::before { transform: rotate(45deg); top: 0; }
+.menu-botom.active .hamburger::after { transform: rotate(-45deg); bottom: 0; }
 
 /* Esconder o menu por padrão no Mobile */
 /* Esconder o menu por padrão no Mobile */
 @media (max-width: 679px) {
     /* O menu começa escondido */
-    .menu-sup {
+    .navbar {
         display: none; 
         position: fixed;
         bottom: 9.2rem; /* Mantém a posição acima do botão */
@@ -147,18 +147,18 @@ a:hover {
     }
 
     /* Quando clicamos no botão, o JS adiciona a classe 'active' */
-    .menu-sup.active {
+    .navbar.active {
         display: flex;
     }
 
     /* O botão SEMPRE fica visível */
-    .menu_botom {
+    .menu-botom {
         display: flex; 
     }
 }
 
 
-.home {
+.hero {
     height: 100vh; 
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
@@ -167,13 +167,13 @@ a:hover {
     padding: 2rem;
 }
 
-.home-content h1 {
+.hero-content h1 {
     font-size: 4rem; /* Tamanho grande para destaque */
     margin-bottom: 2rem;
     color: var(--accent);
 }
 
-.home-content p {
+.hero-content p {
     font-size: 1.8rem;
     color: var(--text-muted);
     margin-bottom: 3rem;
@@ -208,7 +208,7 @@ a:hover {
     transform: translateY(-1px);
 }
 
-.about-container{
+.about__container{
     display: flex;
     flex-direction: column;
     padding: 8rem 2rem;
@@ -217,7 +217,7 @@ a:hover {
 }
 
 
-.about-image img {
+.about__image img {
     width: 100%; /* Garante que a imagem não ultrapasse o limite dos 40% */
     height: auto;
     border-radius: 1rem;
@@ -228,7 +228,7 @@ a:hover {
     background-color: var(--bg-secondary); /* Para dar contraste com o fundo principal */
 }
 
-.services-grid {
+.services__grid {
     display: grid;
     /* A linha mágica aqui: */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -236,7 +236,7 @@ a:hover {
     margin-top: 4rem;
 }
 
-.service-card {
+.services__card {
     background-color: var(--bg-primary);
     padding: 3rem;
     border-radius: 1rem;
@@ -244,7 +244,7 @@ a:hover {
     transition: transform 0.3s;
 }
 
-.service-card:hover {
+.services__card:hover {
     transform: translateY(-10px);
     border-color: var(--accent);
 }
@@ -253,14 +253,14 @@ a:hover {
     padding: 8rem 2rem;
 }
 
-.testimonials-container {
+.testimonials__container {
     display: flex;
     flex-wrap: wrap; /* Para quebrar linha no mobile */
     gap: 3rem;
     justify-content: center;
 }
 
-.testimonial-card {
+.testimonials__card {
     background-color: var(--bg-secondary);
     padding: 4rem;
     border-radius: 1.5rem;
@@ -270,7 +270,7 @@ a:hover {
     max-width: 500px;
 }
 
-.quote-icon {
+.testimonials__quote-icon {
     font-family: serif;
     font-size: 8rem;
     color: var(--accent);
@@ -280,18 +280,18 @@ a:hover {
     margin-bottom: -2rem; /* Puxa o texto para cima das aspas */
 }
 
-.client-info {
+.testimonials__client-info {
     margin-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 1.5rem;
 }
 
-.client-info strong {
+.testimonials__client-info strong {
     display: block;
     color: var(--text-main);
 }
 
-.client-info span {
+.testimonials__client-info span {
     color: var(--text-muted);
     font-size: 1.4rem;
 }
@@ -301,38 +301,38 @@ a:hover {
     padding: 8rem 2rem;
 }
 
-.contact-subtitle {
+.contact__subtitle {
     text-align: center;
     color: var(--text-muted);
     margin-bottom: 4rem;
     font-size: 1.8rem;
 }
 
-.contact-wrapper {
+.contact__wrapper {
     max-width: 600px;
     margin: 0 auto; /* Centraliza o formulário na tela */
 }
 
-.contact-form {
+.contact__form {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-.input-group {
+.contact__input-group {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
 }
 
-.input-group label {
+.contact__input-group label {
     font-size: 1.4rem;
     color: var(--text-main);
     font-weight: bold;
 }
 
-.input-group input, 
-.input-group textarea {
+.contact__input-group input, 
+.contact__input-group textarea {
     background-color: var(--bg-secondary);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 0.8rem;
@@ -343,25 +343,25 @@ a:hover {
     transition: border-color 0.3s;
 }
 
-.input-group input:focus, 
-.input-group textarea:focus {
+.contact__input-group input:focus, 
+.contact__input-group textarea:focus {
     border-color: var(--accent); /* Dá o brilho azul quando o usuário clica */
 }
 
 /* Ajuste para o botão no formulário */
-.contact-form .btn-main {
+.contact__form .btn-main {
     width: 100%; /* No mobile, o botão ocupa tudo para facilitar o clique */
     cursor: pointer;
 }
 
-.main-footer {
+.main__footer {
     background-color: var(--bg-secondary);
     padding: 4rem 2rem 2rem;
     margin-top: 4rem;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.footer-content {
+.main-footer__content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 3rem;
@@ -369,41 +369,41 @@ a:hover {
     margin: 0 auto;
 }
 
-.footer-brand .logo-footer {
+.main-footer__logo .main-footer__logo {
     font-size: 2rem;
     font-weight: bold;
     color: var(--accent);
     margin-bottom: 1rem;
 }
 
-.footer-brand p {
+.main-footer_brand p {
     font-size: 1.4rem;
     color: var(--text-muted);
 }
 
-.footer-links h4, .footer-social h4 {
+.main-footer-links h4, .main-footer-social h4 {
     margin-bottom: 1.5rem;
     font-size: 1.6rem;
 }
 
-.footer-links ul {
+.main-footer-links ul {
     list-style: none;
 }
 
-.footer-links ul li {
+.main-footer-links ul li {
     margin-bottom: 0.8rem;
 }
 
-.footer-links a {
+.main-footer-links a {
     font-size: 1.4rem;
     color: var(--text-muted);
 }
 
-.footer-links a:hover {
+.main-footer-links a:hover {
     color: var(--accent);
 }
 
-.footer-bottom {
+.main-footer-bottom {
     text-align: center;
     margin-top: 4rem;
     padding-top: 2rem;
@@ -418,13 +418,13 @@ a:hover {
     body {
         background-image: url('../bg2x.png');
     }
-    .logo {
+    .navbar__logo {
         display: flex;
     }
-    .menu_botom { 
+    .menu-botom { 
         display: none; 
     }
-    .menu-sup {
+    .navbar {
         display: flex; /* Faz os filhos ficarem lado a lado */
         justify-content: space-between; /* Empurra logo pra um lado e lista pro outro */
         align-items: center;
@@ -437,35 +437,35 @@ a:hover {
         z-index: 1000;
         bottom: auto;
     }
-    .nav-list {
+    .navbar__link {
         display: flex;
         flex-direction: row; /* Itens em linha */
         gap: 2rem; /* Espaçamento moderno entre os links */
     }
-    .menu_botom {
+    .menu-botom {
         display: none;
     }
 
-    .home {
+    .hero {
         padding-top: 8vh;
     }
 
-    .about-container {
+    .about__container {
         display: flex;
         flex-direction: row;
         align-items: center; /* Centraliza verticalmente o texto com a imagem */
         gap: 4rem; /* Cria um espaço entre os dois */
     }
 
-    .about-text {
+    .about__text {
         flex-basis: 50%; /* O texto começa tentando ocupar 60% */
     }
 
-    .about-image {
+    .about__image {
         flex-basis: 50%; /* A imagem começa tentando ocupar 40% */
     }
     
-    .about-image img {
+    .about__image img {
         width: 100%; /* Garante que a imagem não ultrapasse o limite dos 40% */
         height: auto;
         border-radius: 1rem;
