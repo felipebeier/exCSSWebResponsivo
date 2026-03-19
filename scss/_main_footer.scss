@@ -1,0 +1,57 @@
+@use 'variaveis';
+.main__footer {
+    background-color: variaveis.$bg-secondary;
+    padding: 4rem 2rem 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    &__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    }
+    &__logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: variaveis.$accent;
+    margin-bottom: 1rem;
+    }
+    &__brand p {
+    font-size: 1.4rem;
+    color: variaveis.$text-muted;
+    }
+    &__links h4, &__social h4 {
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    }
+
+    &__links ul {
+        list-style: none;
+    }
+
+    &__links ul li {
+        margin-bottom: 0.8rem;
+    }
+
+    &__links a {
+        font-size: 1.4rem;
+        color: variaveis.$text-muted;
+    }
+
+    &__links a:hover {
+        color: variaveis.$accent;
+    }
+
+    &-bottom {
+        text-align: center;
+        margin-top: 4rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        font-size: 1.2rem;
+        color: variaveis.$text-muted;
+    }
+
+
+
+}

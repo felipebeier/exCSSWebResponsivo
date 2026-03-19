@@ -1,0 +1,48 @@
+@use 'variaveis';
+@use 'mixins';
+.menu-botom {
+    background-color: variaveis.$accent;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    @include mixins.flex-center;
+    cursor: pointer;
+    z-index: 2000;
+    box-shadow: 0 4px 13px rgba(0, 0, 0, 0.5);
+
+    &.active { 
+      .hamburger {
+      background: transparent;
+      }
+     }
+     
+    &.active {
+      .hamburger::before {
+      transform: rotate(45deg);
+      top: 0;
+      } 
+
+    &.active {
+      .hamburger::after {
+      transform: rotate(-45deg); bottom: 0; 
+      }
+    }
+  }
+}
+@media (min-width: 679px) {
+    /* O botão SEMPRE fica visível */
+  .menu-botom {
+    display: flex;
+  }
+
+}
+@media (min-width: 680px) {
+    .menu-botom { 
+        display: none; 
+    }
+
+}
+

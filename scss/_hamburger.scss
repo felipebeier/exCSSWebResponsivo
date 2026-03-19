@@ -1,0 +1,25 @@
+@use 'variaveis';
+.hamburger {
+    width: 25px;
+    height: 3px;
+    background: variaveis.$text-main;
+    position: relative;
+    transition: 0.3s;
+
+    &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: variaveis.$text-main;
+    transition: 0.3s;
+    }
+
+    &::before { top: -8px; }
+    &::after { bottom: -8px; }
+
+    
+    // &::before { transform: rotate(45deg); top: 0; }
+    // &::after { transform: rotate(-45deg); bottom: 0; }
+
+}

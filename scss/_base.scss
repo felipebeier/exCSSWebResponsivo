@@ -1,0 +1,26 @@
+@use 'variaveis';
+body {
+
+    background-color: variaveis.$bg-primary;
+    background-image: url('../bg1x.png');
+    color: variaveis.$text-main;
+    background-size: cover;      /* Faz a imagem cobrir a tela toda */
+    background-position: center;  /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Não deixa a imagem repetir */
+    font-size: variaveis.$font_size;
+    min-height: 100vh;
+}
+
+a {
+    color: variaveis.$text-main;
+    text-decoration: variaveis.$decoration;
+    transition: 0.3s;
+    &:hover {
+        opacity: 0.7;
+    }
+}
+@media (min-width: 680px) {
+body {
+    background-image: url("../bg2x.png");
+  }
+}
