@@ -1,0 +1,238 @@
+@use 'variaveis';
+@use 'mixins';
+
+/* =========================================
+   LAYOUT
+   ========================================= */
+
+/* --- HERO --- */
+.hero {
+    height: 100vh; 
+    @include mixins.flex-center;
+    text-align: center;
+    padding: 2rem;
+
+    &__content p {
+    font-size:1.8rem;
+    color: variaveis.$text-muted;
+    margin-bottom: 3rem;
+    }
+    &__content h1 {
+    font-size: 4rem; /* Tamanho grande para destaque */
+    margin-bottom: 2rem;
+    color: variaveis.$accent;
+    }
+}
+
+@media (min-width: 680px) {
+    .hero {
+        padding-top: 8vh;
+    }
+}
+
+/* --- ABOUT --- */
+.about{
+    &__container{
+    @include mixins.flex-column;
+    padding: 8rem 2rem;
+    line-height: 1.6;
+    gap: 4rem;
+    }
+    &__image img{
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    }
+}
+
+@media (min-width: 680px) {
+    .about{
+    &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+    }
+
+    &__text{
+    flex-basis: 50%;
+    }
+
+    &__image{
+    flex-basis: 50%;
+    }
+
+    &__image img{
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    }
+    }
+}
+
+/* --- SERVICES --- */
+.services {
+    padding: 8rem 2rem;
+    background-color: variaveis.$bg-secondary;
+
+    &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+    }
+    &__card {
+    background-color: variaveis.$bg-primary;
+    padding: 3rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s;
+    }
+    &__card:hover {
+    transform: translateY(-10px);
+    border-color: variaveis.$accent;
+    }
+}
+
+/* --- TESTIMONIALS --- */
+.testimonials {
+    padding: 8rem 2rem;
+
+    &__container {
+    @include mixins.flex-row-between;
+    flex-wrap: wrap;
+    gap: 3rem;
+    }
+    &__card {
+    background-color: variaveis.$bg-secondary;
+    padding: 4rem;
+    border-radius: 1.5rem;
+    position: relative;
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    }
+
+    &__quote-icon {
+    font-family: serif;
+    font-size: 8rem;
+    color: variaveis.$accent;
+    opacity: 0.3;
+    line-height: 1;
+    display: block;
+    margin-bottom: -2rem;
+    }
+    &__client-info {
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    }
+    &__client-info strong {
+    display: block;
+    color: variaveis.$text-main;
+    }
+    &__client-info span{
+    color: variaveis.$text-muted;
+    font-size: 1.4rem;
+    }
+}
+
+/* --- CONTACT --- */
+.contact {
+    padding: 8rem 2rem;
+    &__subtitle {
+    text-align: center;
+    color:variaveis.$text-muted;
+    margin-bottom: 4rem;
+    font-size: 1.8rem;
+    }
+    &__wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    }
+    &__form {
+    @include mixins.flex-column;
+    gap: 2rem;
+    }
+    &__input-group {
+    @include mixins.flex-column;
+    gap: 0.8rem;
+    }
+    &__input-group label {
+    font-size: 1.4rem;
+    color: variaveis.$text-main;
+    font-weight: bold;
+    }
+    &__input-group input, &__input-group textarea {
+    background-color: variaveis.$bg-secondary;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+    color: variaveis.$text-main;
+    font-size: 1.6rem;
+    outline: none;
+    transition: border-color 0.3s;
+    }
+    &__input-group input:focus, &__input-group textarea:focus {
+    border-color: variaveis.$accent;
+    }
+    &__form .btn-main {
+    width: 100%;
+    cursor: pointer;
+    }
+}
+
+/* --- MAIN FOOTER --- */
+.main__footer {
+    background-color: variaveis.$bg-secondary;
+    padding: 4rem 2rem 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    &__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    }
+    &__logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: variaveis.$accent;
+    margin-bottom: 1rem;
+    }
+    &__brand p {
+    font-size: 1.4rem;
+    color: variaveis.$text-muted;
+    }
+    &__links h4, &__social h4 {
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    }
+
+    &__links ul {
+        list-style: none;
+    }
+
+    &__links ul li {
+        margin-bottom: 0.8rem;
+    }
+
+    &__links a {
+        font-size: 1.4rem;
+        color: variaveis.$text-muted;
+    }
+
+    &__links a:hover {
+        color: variaveis.$accent;
+    }
+
+    &-bottom {
+        text-align: center;
+        margin-top: 4rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        font-size: 1.2rem;
+        color: variaveis.$text-muted;
+    }
+}

@@ -1,4 +1,18 @@
 @use 'variaveis';
+
+/* --- RESET --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: variaveis.$font-body; 
+}
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+/* --- BASE --- */
 body {
 
     background-color: variaveis.$bg-primary;

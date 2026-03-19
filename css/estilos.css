@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* Inter funciona bem para tudo */
 /* Para detalhes técnicos */
+/* --- RESET --- */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,6 +14,7 @@ html {
   font-size: 62.5%;
 }
 
+/* --- BASE --- */
 body {
   background-color: #0f172a;
   background-image: url("../bg1x.png");
@@ -38,137 +40,10 @@ a:hover {
     background-image: url("../bg2x.png");
   }
 }
-.navbar {
-  position: fixed;
-  right: 0rem;
-  bottom: 9.2rem;
-  border-radius: 1rem;
-  background: #1e293b;
-  justify-content: space-around;
-  list-style: none;
-  letter-spacing: 0.3rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-.navbar__link {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-}
-.navbar__logo {
-  display: none;
-  font-size: 2.4rem;
-  text-transform: uppercase;
-  letter-spacing: 0.4rem;
-  z-index: 1;
-}
-.navbar__link li {
-  letter-spacing: 0.3rem;
-  margin-left: 3.2rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-right: 1rem;
-}
-
-@media (max-width: 679px) {
-  .navbar {
-    display: none;
-    position: fixed;
-    bottom: 9.2rem; /* Mantém a posição acima do botão */
-    right: 3rem;
-    width: 200px; /* Largura fixa para o menu mobile */
-    height: auto;
-    padding: 2rem;
-    flex-direction: column;
-    z-index: 1500;
-    /* Quando clicamos no botão, o JS adiciona a classe 'active' */
-  }
-  .navbar.active {
-    display: flex;
-  }
-}
-@media (min-width: 680px) {
-  .navbar {
-    display: flex; /* Faz os filhos ficarem lado a lado */
-    justify-content: space-between; /* Empurra logo pra um lado e lista pro outro */
-    align-items: center;
-    padding: 0 5%; /* Dá um respiro nas laterais */
-    background-color: #1e293b;
-    height: 8vh;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    bottom: auto;
-  }
-  .navbar__link {
-    display: flex;
-    flex-direction: row; /* Itens em linha */
-    gap: 2rem; /* Espaçamento moderno entre os links */
-  }
-  .navbar__logo {
-    display: flex;
-  }
-}
-.hamburger {
-  width: 25px;
-  height: 3px;
-  background: #f8fafc;
-  position: relative;
-  transition: 0.3s;
-}
-.hamburger::before, .hamburger::after {
-  content: "";
-  position: absolute;
-  width: 25px;
-  height: 3px;
-  background: #f8fafc;
-  transition: 0.3s;
-}
-.hamburger::before {
-  top: -8px;
-}
-.hamburger::after {
-  bottom: -8px;
-}
-
-.menu-botom {
-  background-color: #35568C;
-  width: 6rem;
-  height: 6rem;
-  border-radius: 50%;
-  position: fixed;
-  bottom: 3rem;
-  right: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 2000;
-  box-shadow: 0 4px 13px rgba(0, 0, 0, 0.5);
-}
-.menu-botom.active .hamburger {
-  background: transparent;
-}
-.menu-botom.active .hamburger::before {
-  transform: rotate(45deg);
-  top: 0;
-}
-.menu-botom.active.active .hamburger::after {
-  transform: rotate(-45deg);
-  bottom: 0;
-}
-
-@media (min-width: 679px) {
-  /* O botão SEMPRE fica visível */
-  .menu-botom {
-    display: flex;
-  }
-}
-@media (min-width: 680px) {
-  .menu-botom {
-    display: none;
-  }
-}
+/* =========================================
+   LAYOUT
+   ========================================= */
+/* --- HERO --- */
 .hero {
   height: 100vh;
   display: flex;
@@ -193,44 +68,16 @@ a:hover {
     padding-top: 8vh;
   }
 }
-.btn-main {
-  display: inline-block;
-  background-color: #35568C; /* Agora usando seu novo azul #35568C */
-  color: #f8fafc;
-  padding: 1.5rem 3.5rem;
-  border-radius: 5rem;
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  margin-top: 2rem;
-  /* Adicione uma borda leve para destacar o azul no fundo escuro */
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-.btn-main:hover {
-  /* No hover, podemos deixar o azul um pouco mais claro para dar brilho */
-  background-color: #4a73b5;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(53, 86, 140, 0.4);
-  opacity: 1;
-}
-.btn-main {
-  /* Efeito ao clicar */
-}
-.btn-main:active {
-  transform: translateY(-1px);
-}
-
+/* --- ABOUT --- */
 .about__container {
   display: flex;
   flex-direction: column;
   padding: 8rem 2rem;
   line-height: 1.6;
-  gap: 4rem; /* Cria um espaço entre os dois */
+  gap: 4rem;
 }
 .about__image img {
-  width: 100%; /* Garante que a imagem não ultrapasse o limite dos 40% */
+  width: 100%;
   height: auto;
   border-radius: 1rem;
 }
@@ -239,30 +86,30 @@ a:hover {
   .about__container {
     display: flex;
     flex-direction: row;
-    align-items: center; /* Centraliza verticalmente o texto com a imagem */
-    gap: 4rem; /* Cria um espaço entre os dois */
+    align-items: center;
+    gap: 4rem;
   }
   .about__text {
-    flex-basis: 50%; /* O texto começa tentando ocupar 60% */
+    flex-basis: 50%;
   }
   .about__image {
-    flex-basis: 50%; /* A imagem começa tentando ocupar 40% */
+    flex-basis: 50%;
   }
   .about__image img {
-    width: 100%; /* Garante que a imagem não ultrapasse o limite dos 40% */
+    width: 100%;
     height: auto;
     border-radius: 1rem;
   }
 }
+/* --- SERVICES --- */
 .services {
   padding: 8rem 2rem;
-  background-color: #1e293b; /* Para dar contraste com o fundo principal */
+  background-color: #1e293b;
 }
 .services__grid {
   display: grid;
-  /* A linha mágica aqui: */
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem; /* Espaçamento entre os cards */
+  gap: 3rem;
   margin-top: 4rem;
 }
 .services__card {
@@ -277,6 +124,98 @@ a:hover {
   border-color: #35568C;
 }
 
+/* --- TESTIMONIALS --- */
+.testimonials {
+  padding: 8rem 2rem;
+}
+.testimonials__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.testimonials__card {
+  background-color: #1e293b;
+  padding: 4rem;
+  border-radius: 1.5rem;
+  position: relative;
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+.testimonials__quote-icon {
+  font-family: serif;
+  font-size: 8rem;
+  color: #35568C;
+  opacity: 0.3;
+  line-height: 1;
+  display: block;
+  margin-bottom: -2rem;
+}
+.testimonials__client-info {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+}
+.testimonials__client-info strong {
+  display: block;
+  color: #f8fafc;
+}
+.testimonials__client-info span {
+  color: #94a3b8;
+  font-size: 1.4rem;
+}
+
+/* --- CONTACT --- */
+.contact {
+  padding: 8rem 2rem;
+}
+.contact__subtitle {
+  text-align: center;
+  color: #94a3b8;
+  margin-bottom: 4rem;
+  font-size: 1.8rem;
+}
+.contact__wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.contact__input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.contact__input-group label {
+  font-size: 1.4rem;
+  color: #f8fafc;
+  font-weight: bold;
+}
+.contact__input-group input, .contact__input-group textarea {
+  background-color: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  color: #f8fafc;
+  font-size: 1.6rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.contact__input-group input:focus, .contact__input-group textarea:focus {
+  border-color: #35568C;
+}
+.contact__form .btn-main {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* --- MAIN FOOTER --- */
 .main__footer {
   background-color: #1e293b;
   padding: 4rem 2rem 2rem;
@@ -326,117 +265,164 @@ a:hover {
   color: #94a3b8;
 }
 
-.contact {
-  padding: 8rem 2rem;
-}
-.contact__subtitle {
-  text-align: center;
-  color: #94a3b8;
-  margin-bottom: 4rem;
+/* =========================================
+   COMPONENTS
+   ========================================= */
+/* --- BTN MAIN --- */
+.btn-main {
+  display: inline-block;
+  background-color: #35568C;
+  color: #f8fafc;
+  padding: 1.5rem 3.5rem;
+  border-radius: 5rem;
   font-size: 1.8rem;
-}
-.contact__wrapper {
-  max-width: 600px;
-  margin: 0 auto; /* Centraliza o formulário na tela */
-}
-.contact__form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.contact__input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-.contact__input-group label {
-  font-size: 1.4rem;
-  color: #f8fafc;
   font-weight: bold;
-}
-.contact__input-group input, .contact__input-group textarea {
-  background-color: #1e293b;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0.8rem;
-  padding: 1.5rem;
-  color: #f8fafc;
-  font-size: 1.6rem;
-  outline: none;
-  transition: border-color 0.3s;
-}
-.contact__input-group input:focus, .contact__input-group textarea:focus {
-  border-color: #35568C; /* Dá o brilho azul quando o usuário clica */
-}
-.contact__form .btn-main {
-  width: 100%; /* No mobile, o botão ocupa tudo para facilitar o clique */
-  cursor: pointer;
-}
-
-.testimonials {
-  padding: 8rem 2rem;
-}
-.testimonials__container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap; /* Para quebrar linha no mobile */
-  gap: 3rem;
-}
-.testimonials__card {
-  background-color: #1e293b;
-  padding: 4rem;
-  border-radius: 1.5rem;
-  position: relative; /* Necessário para posicionar as aspas se quiser */
-  flex: 1;
-  min-width: 300px;
-  max-width: 500px;
-}
-.testimonials__quote-icon {
-  font-family: serif;
-  font-size: 8rem;
-  color: #35568C;
-  opacity: 0.3;
-  line-height: 1;
-  display: block;
-  margin-bottom: -2rem; /* Puxa o texto para cima das aspas */
-}
-.testimonials__client-info {
+  text-transform: uppercase;
+  transition: all 0.3s ease;
   margin-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
-.testimonials__client-info strong {
-  display: block;
-  color: #f8fafc;
+.btn-main:hover {
+  background-color: #4a73b5;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(53, 86, 140, 0.4);
+  opacity: 1;
 }
-.testimonials__client-info span {
-  color: #94a3b8;
-  font-size: 1.4rem;
+.btn-main:active {
+  transform: translateY(-1px);
 }
 
-/**/
-/*reset*/
-/*END reset*/
-/*navbar*/
-/*END navbar*/
-/*menu-botom*/
-/*END menu-botom*/
-/*hamburger*/
-/*END hamburger*/
-/*hero*/
-/*END hero*/
-/*btn-main*/
-/*END btn-main*/
-/*about*/
-/*END about*/
-/*services*/
-/*END services*/
-/*testimonials*/
-/*END testimonials*/
-/*contact*/
-/*END contact*/
-/*main_footer*/
-/*END main_footer*/
+/* --- NAVBAR --- */
+.navbar {
+  position: fixed;
+  right: 0rem;
+  bottom: 9.2rem;
+  border-radius: 1rem;
+  background: #1e293b;
+  justify-content: space-around;
+  list-style: none;
+  letter-spacing: 0.3rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.navbar__link {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.navbar__logo {
+  display: none;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  z-index: 1;
+}
+.navbar__link li {
+  letter-spacing: 0.3rem;
+  margin-left: 3.2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+@media (max-width: 679px) {
+  .navbar {
+    display: none;
+    position: fixed;
+    bottom: 9.2rem;
+    right: 3rem;
+    width: 200px;
+    height: auto;
+    padding: 2rem;
+    flex-direction: column;
+    z-index: 1500;
+  }
+  .navbar.active {
+    display: flex;
+  }
+}
+@media (min-width: 680px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    background-color: #1e293b;
+    height: 8vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    bottom: auto;
+  }
+  .navbar__link {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .navbar__logo {
+    display: flex;
+  }
+}
+/* --- MENU BOTOM --- */
+.menu-botom {
+  background-color: #35568C;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2000;
+  box-shadow: 0 4px 13px rgba(0, 0, 0, 0.5);
+}
+.menu-botom.active .hamburger {
+  background: transparent;
+}
+.menu-botom.active .hamburger::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+.menu-botom.active .hamburger::after {
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+
+@media (min-width: 679px) {
+  .menu-botom {
+    display: flex;
+  }
+}
+@media (min-width: 680px) {
+  .menu-botom {
+    display: none;
+  }
+}
+/* --- HAMBURGER --- */
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background: #f8fafc;
+  position: relative;
+  transition: 0.3s;
+}
+.hamburger::before, .hamburger::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background: #f8fafc;
+  transition: 0.3s;
+}
+.hamburger::before {
+  top: -8px;
+}
+.hamburger::after {
+  bottom: -8px;
+}
 
 /*# sourceMappingURL=estilos.css.map */
